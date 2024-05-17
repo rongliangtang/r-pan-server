@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.pan.server.modules.share.mapper.RPanShareMapper">
+
+    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.share.entity.RPanShare">
+        <id property="shareId" column="share_id" jdbcType="BIGINT"/>
+        <result property="shareName" column="share_name" jdbcType="VARCHAR"/>
+        <result property="shareType" column="share_type" jdbcType="TINYINT"/>
+        <result property="shareDayType" column="share_day_type" jdbcType="TINYINT"/>
+        <result property="shareDay" column="share_day" jdbcType="TINYINT"/>
+        <result property="shareEndTime" column="share_end_time" jdbcType="TIMESTAMP"/>
+        <result property="shareUrl" column="share_url" jdbcType="VARCHAR"/>
+        <result property="shareCode" column="share_code" jdbcType="VARCHAR"/>
+        <result property="shareStatus" column="share_status" jdbcType="TINYINT"/>
+        <result property="createUser" column="create_user" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        share_id
+        ,share_name,share_type,
+        share_day_type,share_day,share_end_time,
+        share_url,share_code,share_status,
+        create_user,create_time
+    </sql>
+
+    <select id="selectShareVOListByUserId" resultType="com.imooc.pan.server.modules.share.vo.RPanShareUrlListVO">
+        SELECT share_id       AS shareId,
+               share_name     AS shareName,
+               share_type     AS shareType,
+               share_day_type AS shareDayType,
+               share_end_time AS shareEndTime,
+               share_url      AS shareUrl,
+               share_code     AS shareCode,
+               share_status   AS shareStatus,
+               create_time    AS createTime
+        FROM r_pan_share
+        WHERE create_user = #{userId}
+    </select>
+
+    <select id="rollingQueryShareId" resultType="java.lang.Long">
+        SELECT share_id
+        FROM r_pan_share
+        WHERE share_id > #{startId}
+        ORDER BY share_id ASC
+            LIMIT #{limit}
+    </select>
+
+</mapper>

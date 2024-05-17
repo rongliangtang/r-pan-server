@@ -1,0 +1,37 @@
+<assembly>
+    <id>${project.version}</id>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <formats>
+        <format>dir</format>
+        <format>tar.gz</format>
+        <format>zip</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <includes>
+                <include>conf/**</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <includes>
+                <include>bin/*</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+    </fileSets>
+    <files>
+        <file>
+            <!--打好的jar包名称和放置目录-->
+            <source>../server/target/r-pan-server.jar</source>
+            <outputDirectory>target/</outputDirectory>
+        </file>
+    </files>
+    <moduleSets>
+        <moduleSet>
+            <useAllReactorProjects>true</useAllReactorProjects>
+            <includes>
+                <include>com.imooc.pan:r-pan-server</include>
+            </includes>
+        </moduleSet>
+    </moduleSets>
+</assembly>

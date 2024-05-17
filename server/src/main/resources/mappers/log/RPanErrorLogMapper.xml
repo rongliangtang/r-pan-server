@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.pan.server.modules.log.mapper.RPanErrorLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.log.entity.RPanErrorLog">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="logContent" column="log_content" jdbcType="VARCHAR"/>
+        <result property="logStatus" column="log_status" jdbcType="TINYINT"/>
+        <result property="createUser" column="create_user" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateUser" column="update_user" jdbcType="BIGINT"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,log_content,log_status,
+        create_user,create_time,update_user,
+        update_time
+    </sql>
+</mapper>

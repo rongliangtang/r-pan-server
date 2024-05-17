@@ -1,0 +1,19 @@
+{
+  "groups": [
+    {
+      "name": "com.imooc.pan.bloom.filter.local",
+      "type": "com.imooc.pan.bloom.filter.local.LocalBloomFilterConfig",
+      "sourceType": "com.imooc.pan.bloom.filter.local.LocalBloomFilterConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.imooc.pan.bloom.filter.local.items",
+      "type": "java.util.List<com.imooc.pan.bloom.filter.local.LocalBloomFilterConfigItem>",
+      "description": "需要用的布隆过滤器的集合",
+      "sourceType": "com.imooc.pan.bloom.filter.local.LocalBloomFilterConfig",
+      "defaultValue": null
+    }
+  ],
+  "hints": []
+}

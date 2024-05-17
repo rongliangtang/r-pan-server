@@ -1,0 +1,33 @@
+{
+  "groups": [
+    {
+      "name": "com.imooc.pan.cache.caffeine",
+      "type": "com.imooc.pan.cache.caffeine.config.CaffeineCacheProperties",
+      "sourceType": "com.imooc.pan.cache.caffeine.config.CaffeineCacheProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.imooc.pan.cache.caffeine.allow-null-value",
+      "type": "java.lang.Boolean",
+      "description": "Caffeine缓存是否允许null作为value的属性",
+      "sourceType": "com.imooc.pan.cache.caffeine.config.CaffeineCacheProperties",
+      "defaultValue": "true"
+    },
+    {
+      "name": "com.imooc.pan.cache.caffeine.init-cache-capacity",
+      "type": "java.lang.Integer",
+      "description": "Caffeine缓存的初始容量",
+      "sourceType": "com.imooc.pan.cache.caffeine.config.CaffeineCacheProperties",
+      "defaultValue": 256
+    },
+    {
+      "name": "com.imooc.pan.cache.caffeine.max-cache-capacity",
+      "type": "java.lang.Long",
+      "description": "Caffeine缓存的最大容量",
+      "sourceType": "com.imooc.pan.cache.caffeine.config.CaffeineCacheProperties",
+      "defaultValue": "10000L"
+    }
+  ],
+  "hints": []
+}

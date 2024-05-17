@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.pan.server.modules.file.mapper.RPanFileMapper">
+
+    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.file.entity.RPanFile">
+        <id property="fileId" column="file_id" jdbcType="BIGINT"/>
+        <result property="filename" column="filename" jdbcType="VARCHAR"/>
+        <result property="realPath" column="real_path" jdbcType="VARCHAR"/>
+        <result property="fileSize" column="file_size" jdbcType="VARCHAR"/>
+        <result property="fileSizeDesc" column="file_size_desc" jdbcType="VARCHAR"/>
+        <result property="fileSuffix" column="file_suffix" jdbcType="VARCHAR"/>
+        <result property="filePreviewContentType" column="file_preview_content_type" jdbcType="VARCHAR"/>
+        <result property="identifier" column="identifier" jdbcType="VARCHAR"/>
+        <result property="createUser" column="create_user" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        file_id
+        ,filename,real_path,
+        file_size,file_size_desc,file_suffix,
+        file_preview_content_type,identifier,create_user,
+        create_time
+    </sql>
+</mapper>

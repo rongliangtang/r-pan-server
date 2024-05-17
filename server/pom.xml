@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>r-pan-parent</artifactId>
+        <groupId>com.imooc.pan</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>r-pan-server</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.imooc.pan</groupId>
+            <artifactId>r-pan-web</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.imooc.pan</groupId>
+            <artifactId>r-pan-swagger2</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-devtools</artifactId>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.imooc.pan</groupId>
+            <artifactId>r-pan-mybatis-plus</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.imooc.pan</groupId>
+            <artifactId>r-pan-schedule</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.imooc.pan</groupId>-->
+        <!--            <artifactId>r-pan-cache-caffeine</artifactId>-->
+        <!--            <version>1.0</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.imooc.pan</groupId>
+            <artifactId>r-pan-cache-redis</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.imooc.pan</groupId>
+            <artifactId>r-pan-storage-engine-local</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.imooc.pan</groupId>-->
+        <!--            <artifactId>r-pan-storage-engine-fastdfs</artifactId>-->
+        <!--            <version>1.0</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.imooc.pan</groupId>-->
+        <!--            <artifactId>r-pan-storage-engine-oss</artifactId>-->
+        <!--            <version>1.0</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.imooc.pan</groupId>
+            <artifactId>r-pan-bloom-filter-local</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.imooc.pan</groupId>-->
+        <!--            <artifactId>r-pan-lock-local</artifactId>-->
+        <!--            <version>1.0</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.imooc.pan</groupId>
+            <artifactId>r-pan-lock-redis</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.imooc.pan</groupId>
+            <artifactId>r-pan-stream-rocketmq</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>r-pan-server</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${org.mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${projectlombok.version}</version>
+                        </path>
+                        <!-- This is needed when using Lombok 1.18.16 and above -->
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>${lombok-mapstruct-binding.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-configuration-processor</artifactId>
+                            <version>2.1.9.RELEASE</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.imooc.pan.server.RPanServerLauncher</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

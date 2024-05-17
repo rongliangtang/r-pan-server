@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.pan.server.modules.file.mapper.RPanUserFileMapper">
+
+    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.file.entity.RPanUserFile">
+        <id property="fileId" column="file_id" jdbcType="BIGINT"/>
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="parentId" column="parent_id" jdbcType="BIGINT"/>
+        <result property="realFileId" column="real_file_id" jdbcType="BIGINT"/>
+        <result property="filename" column="filename" jdbcType="VARCHAR"/>
+        <result property="folderFlag" column="folder_flag" jdbcType="TINYINT"/>
+        <result property="fileSizeDesc" column="file_size_desc" jdbcType="VARCHAR"/>
+        <result property="fileType" column="file_type" jdbcType="TINYINT"/>
+        <result property="delFlag" column="del_flag" jdbcType="TINYINT"/>
+        <result property="createUser" column="create_user" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateUser" column="update_user" jdbcType="BIGINT"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        file_id
+        ,user_id,parent_id,
+        real_file_id,filename,folder_flag,
+        file_size_desc,file_type,del_flag,
+        create_user,create_time,update_user,
+        update_time
+    </sql>
+
+    <select id="selectFileList" resultType="com.imooc.pan.server.modules.file.vo.RPanUserFileVO">
+        SELECT
+        file_id AS fileId,
+        parent_id AS parentId,
+        filename AS filename,
+        file_size_desc AS fileSizeDesc,
+        folder_flag AS folderFlag,
+        file_type AS fileType,
+        update_time AS updateTime
+        FROM
+        r_pan_user_file
+        WHERE
+        user_id = #{param.userId}
+        <if test="param.fileIdList != null">
+            AND file_id IN
+            <foreach collection="param.fileIdList" open="(" close=")" item="item" separator=",">
+                #{item}
+            </foreach>
+        </if>
+        <if test="param.parentId != null and param.parentId != -1">
+            AND parent_id = #{param.parentId}
+        </if>
+        <if test="param.fileTypeArray != null">
+            AND file_type IN
+            <foreach collection="param.fileTypeArray" open="(" close=")" item="item" separator=",">
+                #{item}
+            </foreach>
+        </if>
+        AND del_flag = #{param.delFlag}
+    </select>
+
+    <select id="searchFile" resultType="com.imooc.pan.server.modules.file.vo.FileSearchResultVO">
+        SELECT
+        file_id AS fileId,
+        parent_id AS parentId,
+        filename AS filename,
+        file_size_desc AS fileSizeDesc,
+        folder_flag AS folderFlag,
+        file_type AS fileType,
+        update_time AS updateTime
+        FROM
+        r_pan_user_file
+        WHERE
+        user_id = #{param.userId}
+        AND filename LIKE CONCAT(#{param.keyword}, '%')
+        <if test="param.fileTypeArray != null">
+            AND file_type IN
+            <foreach collection="param.fileTypeArray" open="(" close=")" item="item" separator=",">
+                #{item}
+            </foreach>
+        </if>
+        AND del_flag = 0
+    </select>
+
+</mapper>

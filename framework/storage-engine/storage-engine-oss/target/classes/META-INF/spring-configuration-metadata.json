@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "com.imooc.pan.storage.engine.oss",
+      "type": "com.imooc.pan.storage.engine.oss.config.OssStorageEngineConfig",
+      "sourceType": "com.imooc.pan.storage.engine.oss.config.OssStorageEngineConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.imooc.pan.storage.engine.oss.access-key-id",
+      "type": "java.lang.String",
+      "description": "accessKeyId",
+      "sourceType": "com.imooc.pan.storage.engine.oss.config.OssStorageEngineConfig",
+      "defaultValue": ""
+    },
+    {
+      "name": "com.imooc.pan.storage.engine.oss.access-key-secret",
+      "type": "java.lang.String",
+      "description": "accessKeySecret",
+      "sourceType": "com.imooc.pan.storage.engine.oss.config.OssStorageEngineConfig",
+      "defaultValue": ""
+    },
+    {
+      "name": "com.imooc.pan.storage.engine.oss.auto-create-bucket",
+      "type": "java.lang.Boolean",
+      "description": "是否自动创建桶",
+      "sourceType": "com.imooc.pan.storage.engine.oss.config.OssStorageEngineConfig",
+      "defaultValue": true
+    },
+    {
+      "name": "com.imooc.pan.storage.engine.oss.bucket-name",
+      "type": "java.lang.String",
+      "description": "桶名称",
+      "sourceType": "com.imooc.pan.storage.engine.oss.config.OssStorageEngineConfig",
+      "defaultValue": ""
+    },
+    {
+      "name": "com.imooc.pan.storage.engine.oss.endpoint",
+      "type": "java.lang.String",
+      "description": "文件上传的断端点",
+      "sourceType": "com.imooc.pan.storage.engine.oss.config.OssStorageEngineConfig",
+      "defaultValue": ""
+    }
+  ],
+  "hints": []
+}

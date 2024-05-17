@@ -1,0 +1,64 @@
+{
+    "properties": [
+        {
+            "name": "swagger2.show",
+            "type": "java.lang.Boolean",
+            "description": "是否展示接口文档",
+            "defaultValue": true
+        },
+        {
+            "name": "swagger2.group-name",
+            "type": "java.lang.String",
+            "description": "组名称",
+            "defaultValue": "r-pan"
+        },
+        {
+            "name": "swagger2.title",
+            "type": "java.lang.String",
+            "description": "接口文档标题",
+            "defaultValue": "r-pan-server"
+        },
+        {
+            "name": "swagger2.description",
+            "type": "java.lang.String",
+            "description": "接口文档描述",
+            "defaultValue": "r-pan-server"
+        },
+        {
+            "name": "swagger2.terms-of-service-url",
+            "type": "java.lang.String",
+            "description": "接口文档基础请求路径",
+            "defaultValue": "http://127.0.0.1:${server.port}"
+        },
+        {
+            "name": "swagger2.base-package",
+            "type": "java.lang.String",
+            "description": "接口文档基础接口扫描路径",
+            "defaultValue": "com.imooc.pan"
+        },
+        {
+            "name": "swagger2.contact-name",
+            "type": "java.lang.String",
+            "description": "联系人名称",
+            "defaultValue": "tom"
+        },
+        {
+            "name": "swagger2.contact-url",
+            "type": "java.lang.String",
+            "description": "联系人地址",
+            "defaultValue": "https://tangrl.cn"
+        },
+        {
+            "name": "swagger2.contact-email",
+            "type": "java.lang.String",
+            "description": "联系人邮箱",
+            "defaultValue": "947925189@qq.com"
+        },
+        {
+            "name": "swagger2.version",
+            "type": "java.lang.String",
+            "description": "项目版本",
+            "defaultValue": "1.0"
+        }
+    ]
+}

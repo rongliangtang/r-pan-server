@@ -1,0 +1,30 @@
+{
+  "groups": [
+    {
+      "name": "com.imooc.pan.cache.caffeine",
+      "type": "com.imooc.pan.cache.caffeine.test.config.CaffeineCacheProperties",
+      "sourceType": "com.imooc.pan.cache.caffeine.test.config.CaffeineCacheProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.imooc.pan.cache.caffeine.allow-null-value",
+      "type": "java.lang.Boolean",
+      "description": "是否允许空值null作为缓存的value com.imooc.pan.cache.caffeine.allow-null-value",
+      "sourceType": "com.imooc.pan.cache.caffeine.test.config.CaffeineCacheProperties"
+    },
+    {
+      "name": "com.imooc.pan.cache.caffeine.init-cache-capacity",
+      "type": "java.lang.Integer",
+      "description": "缓存初始容量 com.imooc.pan.cache.caffeine.init-cache-capacity",
+      "sourceType": "com.imooc.pan.cache.caffeine.test.config.CaffeineCacheProperties"
+    },
+    {
+      "name": "com.imooc.pan.cache.caffeine.max-cache-capacity",
+      "type": "java.lang.Long",
+      "description": "缓存最大容量，超过之后会按照recently or very often（最近最少）策略进行缓存剔除 com.imooc.pan.cache.caffeine.max-cache-capacity",
+      "sourceType": "com.imooc.pan.cache.caffeine.test.config.CaffeineCacheProperties"
+    }
+  ],
+  "hints": []
+}

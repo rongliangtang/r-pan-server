@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>r-pan-parent</artifactId>
+        <groupId>com.imooc.pan</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>r-pan-framework</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>core</module>
+        <module>web</module>
+        <module>swagger2</module>
+        <module>orm</module>
+        <module>cache</module>
+        <module>schedule</module>
+        <module>storage-engine</module>
+        <module>bloom-filter</module>
+        <module>lock</module>
+        <module>stream</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>

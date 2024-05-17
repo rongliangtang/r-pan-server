@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.pan.server.modules.file.mapper.RPanFileChunkMapper">
+
+    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.file.entity.RPanFileChunk">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="identifier" column="identifier" jdbcType="VARCHAR"/>
+        <result property="realPath" column="real_path" jdbcType="VARCHAR"/>
+        <result property="chunkNumber" column="chunk_number" jdbcType="INTEGER"/>
+        <result property="expirationTime" column="expiration_time" jdbcType="TIMESTAMP"/>
+        <result property="createUser" column="create_user" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,identifier,real_path,
+        chunk_number,expiration_time,create_user,
+        create_time
+    </sql>
+</mapper>

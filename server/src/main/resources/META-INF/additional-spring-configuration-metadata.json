@@ -1,0 +1,16 @@
+{
+    "properties": [
+        {
+            "name": "com.imooc.pan.server.chunk-file-expiration-days",
+            "type": "java.lang.Integer",
+            "description": "分片文件的过期天数",
+            "defaultValue": 1
+        },
+        {
+            "name": "com.imooc.pan.server.share-prefix",
+            "type": "java.lang.String",
+            "description": "分享链接的前缀",
+            "defaultValue": "http://127.0.0.1:serverPort/share/"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+com:
+    imooc:
+        pan:
+            bloom:
+                filter:
+                    local:
+                        items:
+                            -   name: test
+                                funnel-type-name: INTEGER
+                                expected-insertions: 1000000
+                                fpp: 0.01

@@ -1,0 +1,17 @@
+{
+    "properties": [
+        {
+            "name": "com.imooc.pan.storage.engine.local.root-file-path",
+            "type": "java.lang.String",
+            "description": "文件上传的根目录",
+            "defaultValue": "@see com.imooc.pan.core.utils.FileUtils.generateDefaultStoreFileRealPath"
+        },
+        {
+            "name": "com.imooc.pan.storage.engine.local.root-file-chunk-path",
+            "type": "java.lang.String",
+            "description": "文件分片上传的根目录",
+            "description": "文件分片上传的根目录",
+            "defaultValue": "@see com.imooc.pan.core.utils.FileUtils.generateDefaultStoreFileChunkRealPath"
+        }
+    ]
+}

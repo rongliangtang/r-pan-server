@@ -1,0 +1,34 @@
+{
+    "properties": [
+        {
+            "name": "com.imooc.pan.storage.engine.oss.endpoint",
+            "type": "java.lang.String",
+            "description": "文件上传的断端点",
+            "defaultValue": ""
+        },
+        {
+            "name": "com.imooc.pan.storage.engine.oss.access-key-id",
+            "type": "java.lang.String",
+            "description": "accessKeyId",
+            "defaultValue": ""
+        },
+        {
+            "name": "com.imooc.pan.storage.engine.oss.access-key-secret",
+            "type": "java.lang.String",
+            "description": "accessKeySecret",
+            "defaultValue": ""
+        },
+        {
+            "name": "com.imooc.pan.storage.engine.oss.bucket-name",
+            "type": "java.lang.String",
+            "description": "桶名称",
+            "defaultValue": ""
+        },
+        {
+            "name": "com.imooc.pan.storage.engine.oss.auto-create-bucket",
+            "type": "java.lang.Boolean",
+            "description": "是否自动创建桶",
+            "defaultValue": true
+        }
+    ]
+}

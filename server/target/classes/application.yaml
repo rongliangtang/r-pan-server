@@ -1,0 +1,128 @@
+spring:
+    redis:
+        database: 1
+        host: 127.0.0.1
+    application:
+        name: r-pan-server
+    output:
+        ansi:
+            enabled: always
+    mvc:
+        servlet:
+            load-on-startup: 1
+    servlet:
+        multipart:
+            max-file-size: 3072MB
+            max-request-size: 3072MB
+    datasource:
+        username: root
+        password: xxx
+        url: jdbc:mysql://127.0.0.1:3306/r_pan?characterEncoding=utf8&serverTimeZone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    cloud:
+        stream:
+            rocketmq:
+                binder:
+                    name-server: 127.0.0.1:9876
+            bindings:
+                testInput:
+                    destination: testTopic
+                    group: testTopicGroup1
+                testOutput:
+                    destination: testTopic
+                errorLogInput:
+                    destination: errorLogTopic
+                    group: errorLogGroup
+                deleteFileInput:
+                    destination: deleteFileTopic
+                    group: deleteFileGroup
+                fileRestoreInput:
+                    destination: fileRestoreTopic
+                    group: fileRestoreGroup
+                physicalDeleteFileInput:
+                    destination: physicalDeleteFileTopic
+                    group: physicalDeleteFileGroup
+                userSearchInput:
+                    destination: userSearchTopic
+                    group: userSearchGroup
+                errorLogOutput:
+                    destination: errorLogTopic
+                deleteFileOutput:
+                    destination: deleteFileTopic
+                fileRestoreOutput:
+                    destination: fileRestoreTopic
+                physicalDeleteFileOutput:
+                    destination: physicalDeleteFileTopic
+                userSearchOutput:
+                    destination: userSearchTopic
+
+
+mybatis-plus:
+    mapper-locations: classpath:mappers/**/*.xml
+
+server:
+    port: 8082
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+                exclude: env,beans
+
+swagger2:
+    show: true
+    group-name: ${spring.application.name}
+    base-package: com.imooc.pan
+    title: r-pan-server docs
+    description: r-pan-server docs
+    terms-of-service-url: http://127.0.0.1:${server.port}
+    contact-name: tom
+    contact-url: https://tangrl.cn
+    contact-email: 947925189@qq.com
+    version: 1.0
+
+logging:
+    file: ${user.home}/logs/${spring.application.name}/${spring.application.name}.log
+    level:
+        root: INFO
+
+
+#com:
+#    imooc:
+#        pan:
+#            storage:
+#                engine:
+#                    oss:
+#                        bucket-name: pan-imooc-test-1
+#                        endpoint: oss-cn-beijing.aliyuncs.com
+#                        access-key-id: xxx
+#                        access-key-secret: xxx
+#                        auto-create-bucket: true
+#          fdfs:
+#            connect-timeout: 600
+#            tracker-list:
+#              - 39.98.37.93:22122
+#            group: group1
+
+com:
+    imooc:
+        pan:
+            #            storage:
+            #                engine:
+            #                    oss:
+            #                        bucket-name: pan-imooc-test-1
+            #                        endpoint: oss-cn-beijing.aliyuncs.com
+            #                        access-key-id: xxx
+            #                        access-key-secret: xxx
+            #                        auto-create-bucket: true
+            server:
+                share-prefix: https://rpan.tangrl.cn/share/
+            bloom:
+                filter:
+                    local:
+                        items:
+                            -   name: SHARE_SIMPLE_DETAIL
+                                funnel-type-name: LONG
+                                expected-insertions: 10000000
+                                fpp: 0.01
