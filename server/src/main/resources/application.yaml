@@ -16,7 +16,7 @@ spring:
             max-request-size: 3072MB
     datasource:
         username: root
-        password: xxx
+        password: tangrlggb1
         url: jdbc:mysql://127.0.0.1:3306/r_pan?characterEncoding=utf8&serverTimeZone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
         driver-class-name: com.mysql.cj.jdbc.Driver
     cloud:
@@ -71,7 +71,7 @@ management:
                 exclude: env,beans
 
 swagger2:
-    show: true
+    show: false
     group-name: ${spring.application.name}
     base-package: com.imooc.pan
     title: r-pan-server docs
@@ -102,7 +102,7 @@ logging:
 #          fdfs:
 #            connect-timeout: 600
 #            tracker-list:
-#              - 39.98.37.93:22122
+#              - xx.xx.xx.xx:22122
 #            group: group1
 
 com:
@@ -117,7 +117,7 @@ com:
             #                        access-key-secret: xxx
             #                        auto-create-bucket: true
             server:
-                share-prefix: https://rpan.tangrl.cn/share/
+                share-prefix: https://pan.tangrl.cn/share/
             bloom:
                 filter:
                     local:
