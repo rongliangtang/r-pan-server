@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.imooc.pan.server.modules.user.mapper.RPanUserMapper">
+<mapper namespace="com.tangrl.pan.server.modules.user.mapper.RPanUserMapper">
 
-    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.user.entity.RPanUser">
+    <resultMap id="BaseResultMap" type="com.tangrl.pan.server.modules.user.entity.RPanUser">
         <id property="userId" column="user_id" jdbcType="BIGINT"/>
         <result property="username" column="username" jdbcType="VARCHAR"/>
         <result property="password" column="password" jdbcType="VARCHAR"/>

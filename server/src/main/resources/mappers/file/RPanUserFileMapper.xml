@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.imooc.pan.server.modules.file.mapper.RPanUserFileMapper">
+<mapper namespace="com.tangrl.pan.server.modules.file.mapper.RPanUserFileMapper">
 
-    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.file.entity.RPanUserFile">
+    <resultMap id="BaseResultMap" type="com.tangrl.pan.server.modules.file.entity.RPanUserFile">
         <id property="fileId" column="file_id" jdbcType="BIGINT"/>
         <result property="userId" column="user_id" jdbcType="BIGINT"/>
         <result property="parentId" column="parent_id" jdbcType="BIGINT"/>
@@ -29,7 +29,7 @@
         update_time
     </sql>
 
-    <select id="selectFileList" resultType="com.imooc.pan.server.modules.file.vo.RPanUserFileVO">
+    <select id="selectFileList" resultType="com.tangrl.pan.server.modules.file.vo.RPanUserFileVO">
         SELECT
         file_id AS fileId,
         parent_id AS parentId,
@@ -60,7 +60,7 @@
         AND del_flag = #{param.delFlag}
     </select>
 
-    <select id="searchFile" resultType="com.imooc.pan.server.modules.file.vo.FileSearchResultVO">
+    <select id="searchFile" resultType="com.tangrl.pan.server.modules.file.vo.FileSearchResultVO">
         SELECT
         file_id AS fileId,
         parent_id AS parentId,

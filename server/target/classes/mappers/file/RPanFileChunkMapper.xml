@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.imooc.pan.server.modules.file.mapper.RPanFileChunkMapper">
+<mapper namespace="com.tangrl.pan.server.modules.file.mapper.RPanFileChunkMapper">
 
-    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.file.entity.RPanFileChunk">
+    <resultMap id="BaseResultMap" type="com.tangrl.pan.server.modules.file.entity.RPanFileChunk">
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="identifier" column="identifier" jdbcType="VARCHAR"/>
         <result property="realPath" column="real_path" jdbcType="VARCHAR"/>

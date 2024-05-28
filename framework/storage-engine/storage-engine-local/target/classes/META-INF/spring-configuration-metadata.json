@@ -1,25 +1,25 @@
 {
   "groups": [
     {
-      "name": "com.imooc.pan.storage.engine.local",
-      "type": "com.imooc.pan.storage.engine.local.config.LocalStorageEngineConfig",
-      "sourceType": "com.imooc.pan.storage.engine.local.config.LocalStorageEngineConfig"
+      "name": "com.tangrl.pan.storage.engine.local",
+      "type": "com.tangrl.pan.storage.engine.local.config.LocalStorageEngineConfig",
+      "sourceType": "com.tangrl.pan.storage.engine.local.config.LocalStorageEngineConfig"
     }
   ],
   "properties": [
     {
-      "name": "com.imooc.pan.storage.engine.local.root-file-chunk-path",
+      "name": "com.tangrl.pan.storage.engine.local.root-file-chunk-path",
       "type": "java.lang.String",
       "description": "文件分片上传的根目录",
-      "sourceType": "com.imooc.pan.storage.engine.local.config.LocalStorageEngineConfig",
-      "defaultValue": "@see com.imooc.pan.core.utils.FileUtils.generateDefaultStoreFileChunkRealPath"
+      "sourceType": "com.tangrl.pan.storage.engine.local.config.LocalStorageEngineConfig",
+      "defaultValue": "@see com.tangrl.pan.core.utils.FileUtils.generateDefaultStoreFileChunkRealPath"
     },
     {
-      "name": "com.imooc.pan.storage.engine.local.root-file-path",
+      "name": "com.tangrl.pan.storage.engine.local.root-file-path",
       "type": "java.lang.String",
       "description": "文件上传的根目录",
-      "sourceType": "com.imooc.pan.storage.engine.local.config.LocalStorageEngineConfig",
-      "defaultValue": "@see com.imooc.pan.core.utils.FileUtils.generateDefaultStoreFileRealPath"
+      "sourceType": "com.tangrl.pan.storage.engine.local.config.LocalStorageEngineConfig",
+      "defaultValue": "@see com.tangrl.pan.core.utils.FileUtils.generateDefaultStoreFileRealPath"
     }
   ],
   "hints": []

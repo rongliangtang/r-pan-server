@@ -2,8 +2,8 @@
   "groups": [
     {
       "name": "swagger2",
-      "type": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties"
+      "type": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties"
     }
   ],
   "properties": [
@@ -11,70 +11,70 @@
       "name": "swagger2.base-package",
       "type": "java.lang.String",
       "description": "接口文档基础接口扫描路径",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
-      "defaultValue": "com.imooc.pan"
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
+      "defaultValue": "com.tangrl.pan"
     },
     {
       "name": "swagger2.contact-email",
       "type": "java.lang.String",
       "description": "联系人邮箱",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
       "defaultValue": "947925189@qq.com"
     },
     {
       "name": "swagger2.contact-name",
       "type": "java.lang.String",
       "description": "联系人名称",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
       "defaultValue": "tom"
     },
     {
       "name": "swagger2.contact-url",
       "type": "java.lang.String",
       "description": "联系人地址",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
       "defaultValue": "https:\/\/tangrl.cn"
     },
     {
       "name": "swagger2.description",
       "type": "java.lang.String",
       "description": "接口文档描述",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
       "defaultValue": "r-pan-server"
     },
     {
       "name": "swagger2.group-name",
       "type": "java.lang.String",
       "description": "组名称",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
       "defaultValue": "r-pan"
     },
     {
       "name": "swagger2.show",
       "type": "java.lang.Boolean",
       "description": "是否展示接口文档",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
       "defaultValue": true
     },
     {
       "name": "swagger2.terms-of-service-url",
       "type": "java.lang.String",
       "description": "接口文档基础请求路径",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
       "defaultValue": "http:\/\/127.0.0.1:${server.port}"
     },
     {
       "name": "swagger2.title",
       "type": "java.lang.String",
       "description": "接口文档标题",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
       "defaultValue": "r-pan-server"
     },
     {
       "name": "swagger2.version",
       "type": "java.lang.String",
       "description": "项目版本",
-      "sourceType": "com.imooc.pan.swagger2.Swagger2ConfigProperties",
+      "sourceType": "com.tangrl.pan.swagger2.Swagger2ConfigProperties",
       "defaultValue": "1.0"
     }
   ],

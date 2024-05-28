@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.imooc.pan.server.modules.file.mapper.RPanFileMapper">
+<mapper namespace="com.tangrl.pan.server.modules.file.mapper.RPanFileMapper">
 
-    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.file.entity.RPanFile">
+    <resultMap id="BaseResultMap" type="com.tangrl.pan.server.modules.file.entity.RPanFile">
         <id property="fileId" column="file_id" jdbcType="BIGINT"/>
         <result property="filename" column="filename" jdbcType="VARCHAR"/>
         <result property="realPath" column="real_path" jdbcType="VARCHAR"/>

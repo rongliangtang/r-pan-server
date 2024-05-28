@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.imooc.pan.server.modules.user.mapper.RPanUserSearchHistoryMapper">
+<mapper namespace="com.tangrl.pan.server.modules.user.mapper.RPanUserSearchHistoryMapper">
 
-    <resultMap id="BaseResultMap" type="com.imooc.pan.server.modules.user.entity.RPanUserSearchHistory">
+    <resultMap id="BaseResultMap" type="com.tangrl.pan.server.modules.user.entity.RPanUserSearchHistory">
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="userId" column="user_id" jdbcType="BIGINT"/>
         <result property="searchContent" column="search_content" jdbcType="VARCHAR"/>
@@ -19,7 +19,7 @@
     </sql>
 
     <select id="selectUserSearchHistories"
-            resultType="com.imooc.pan.server.modules.user.vo.UserSearchHistoryVO">
+            resultType="com.tangrl.pan.server.modules.user.vo.UserSearchHistoryVO">
         SELECT search_content AS `value`
         FROM r_pan_user_search_history
         WHERE user_id = #{param.userId}

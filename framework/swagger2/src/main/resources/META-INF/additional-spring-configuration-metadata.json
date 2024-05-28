@@ -34,7 +34,7 @@
             "name": "swagger2.base-package",
             "type": "java.lang.String",
             "description": "接口文档基础接口扫描路径",
-            "defaultValue": "com.imooc.pan"
+            "defaultValue": "com.tangrl.pan"
         },
         {
             "name": "swagger2.contact-name",

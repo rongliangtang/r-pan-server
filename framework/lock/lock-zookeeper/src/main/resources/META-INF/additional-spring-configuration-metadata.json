@@ -1,13 +1,13 @@
 {
     "properties": [
         {
-            "name": "com.imooc.pan.lock.zookeeper.host",
+            "name": "com.tangrl.pan.lock.zookeeper.host",
             "type": "java.lang.String",
             "description": "ZooKeeper连接地址，多个用逗号隔开",
             "defaultValue": "127.0.0.1:2181"
         },
         {
-            "name": "com.imooc.pan.lock.zookeeper.root-path",
+            "name": "com.tangrl.pan.lock.zookeeper.root-path",
             "type": "java.lang.String",
             "description": "ZooKeeper分布式锁根路径",
             "defaultValue": "/r-pan-lock"

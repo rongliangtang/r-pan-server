@@ -30,7 +30,7 @@
         <moduleSet>
             <useAllReactorProjects>true</useAllReactorProjects>
             <includes>
-                <include>com.imooc.pan:r-pan-server</include>
+                <include>com.tangrl.pan:r-pan-server</include>
             </includes>
         </moduleSet>
     </moduleSets>

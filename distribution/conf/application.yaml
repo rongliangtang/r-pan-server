@@ -73,7 +73,7 @@ management:
 swagger2:
     show: false
     group-name: ${spring.application.name}
-    base-package: com.imooc.pan
+    base-package: com.tangrl.pan
     title: r-pan-server docs
     description: r-pan-server docs
     terms-of-service-url: http://127.0.0.1:${server.port}
@@ -89,12 +89,12 @@ logging:
 
 
 #com:
-#    imooc:
+#    tangrl:
 #        pan:
 #            storage:
 #                engine:
 #                    oss:
-#                        bucket-name: pan-imooc-test-1
+#                        bucket-name: pan-tangrl-test-1
 #                        endpoint: oss-cn-beijing.aliyuncs.com
 #                        access-key-id: LTAI5tJiLByyUfFwWYEXZFvg
 #                        access-key-secret: Fm5rkdaHCkwaFqOfm6Md21mIi26cjv
@@ -106,12 +106,12 @@ logging:
 #            group: group1
 
 com:
-    imooc:
+    tangrl:
         pan:
             #            storage:
             #                engine:
             #                    oss:
-            #                        bucket-name: pan-imooc-test-1
+            #                        bucket-name: pan-tangrl-test-1
             #                        endpoint: oss-cn-beijing.aliyuncs.com
             #                        access-key-id: LTAI5tJiLByyUfFwWYEXZFvg
             #                        access-key-secret: Fm5rkdaHCkwaFqOfm6Md21mIi26cjv

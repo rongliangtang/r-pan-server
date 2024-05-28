@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>r-pan-parent</artifactId>
-        <groupId>com.imooc.pan</groupId>
+        <groupId>com.tangrl.pan</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -19,12 +19,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.imooc.pan</groupId>
+            <groupId>com.tangrl.pan</groupId>
             <artifactId>r-pan-web</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.imooc.pan</groupId>
+            <groupId>com.tangrl.pan</groupId>
             <artifactId>r-pan-swagger2</artifactId>
             <version>1.0</version>
         </dependency>
@@ -33,22 +33,22 @@
         <!--            <artifactId>spring-boot-devtools</artifactId>-->
         <!--        </dependency>-->
         <dependency>
-            <groupId>com.imooc.pan</groupId>
+            <groupId>com.tangrl.pan</groupId>
             <artifactId>r-pan-mybatis-plus</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.imooc.pan</groupId>
+            <groupId>com.tangrl.pan</groupId>
             <artifactId>r-pan-schedule</artifactId>
             <version>1.0</version>
         </dependency>
         <!--        <dependency>-->
-        <!--            <groupId>com.imooc.pan</groupId>-->
+        <!--            <groupId>com.tangrl.pan</groupId>-->
         <!--            <artifactId>r-pan-cache-caffeine</artifactId>-->
         <!--            <version>1.0</version>-->
         <!--        </dependency>-->
         <dependency>
-            <groupId>com.imooc.pan</groupId>
+            <groupId>com.tangrl.pan</groupId>
             <artifactId>r-pan-cache-redis</artifactId>
             <version>1.0</version>
         </dependency>
@@ -57,17 +57,17 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.imooc.pan</groupId>
+            <groupId>com.tangrl.pan</groupId>
             <artifactId>r-pan-storage-engine-local</artifactId>
             <version>1.0</version>
         </dependency>
         <!--        <dependency>-->
-        <!--            <groupId>com.imooc.pan</groupId>-->
+        <!--            <groupId>com.tangrl.pan</groupId>-->
         <!--            <artifactId>r-pan-storage-engine-fastdfs</artifactId>-->
         <!--            <version>1.0</version>-->
         <!--        </dependency>-->
         <!--        <dependency>-->
-        <!--            <groupId>com.imooc.pan</groupId>-->
+        <!--            <groupId>com.tangrl.pan</groupId>-->
         <!--            <artifactId>r-pan-storage-engine-oss</artifactId>-->
         <!--            <version>1.0</version>-->
         <!--        </dependency>-->
@@ -77,22 +77,22 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.imooc.pan</groupId>
+            <groupId>com.tangrl.pan</groupId>
             <artifactId>r-pan-bloom-filter-local</artifactId>
             <version>1.0</version>
         </dependency>
         <!--        <dependency>-->
-        <!--            <groupId>com.imooc.pan</groupId>-->
+        <!--            <groupId>com.tangrl.pan</groupId>-->
         <!--            <artifactId>r-pan-lock-local</artifactId>-->
         <!--            <version>1.0</version>-->
         <!--        </dependency>-->
         <dependency>
-            <groupId>com.imooc.pan</groupId>
+            <groupId>com.tangrl.pan</groupId>
             <artifactId>r-pan-lock-redis</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.imooc.pan</groupId>
+            <groupId>com.tangrl.pan</groupId>
             <artifactId>r-pan-stream-rocketmq</artifactId>
             <version>1.0</version>
         </dependency>
@@ -149,7 +149,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.imooc.pan.server.RPanServerLauncher</mainClass>
+                    <mainClass>com.tangrl.pan.server.RPanServerLauncher</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>

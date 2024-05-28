@@ -1,7 +1,7 @@
 {
     "properties": [
         {
-            "name": "com.imooc.pan.bloom.filter.local.items",
+            "name": "com.tangrl.pan.bloom.filter.local.items",
             "type": "java.util.List",
             "description": "需要用的布隆过滤器的集合",
             "defaultValue": null
