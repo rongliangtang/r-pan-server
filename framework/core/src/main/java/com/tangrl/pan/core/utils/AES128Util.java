@@ -8,6 +8,10 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * AES-CBC 128 加密工具类
+ * TODO iv 固定，不够安全（可预测、重复、暴力破解），考虑iv随机生成作为id一部分传输
+ */
 public class AES128Util {
 
     /**
@@ -24,7 +28,7 @@ public class AES128Util {
     private static final String INSTANCE_STR = "AES/CBC/PKCS5Padding";
 
     /**
-     * 加密 128位
+     * 加密字节数组
      *
      * @param content 需要加密的原内容
      * @return
@@ -44,7 +48,7 @@ public class AES128Util {
     }
 
     /**
-     * 解密
+     * 解密字节数组
      *
      * @param content 解密前的byte数组
      * @return result  解密后的byte数组
@@ -65,7 +69,7 @@ public class AES128Util {
     }
 
     /**
-     * 加密字符串 128位
+     * 加密字符串
      *
      * @param content 需要加密的原内容
      * @return
@@ -88,10 +92,10 @@ public class AES128Util {
     }
 
     /**
-     * 解密
+     * 解密字符串
      *
-     * @param content 解密前的byte数组
-     * @return result  解密后的byte数组
+     * @param content
+     * @return result
      * @throws Exception
      */
     public static String aesDecodeString(String content) {

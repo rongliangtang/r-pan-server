@@ -3,7 +3,8 @@ package com.tangrl.pan.core.constants;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * RPan公用基础常量类
+ * RPan 公用基础常量类
+ * 包括需要用到的字符串、整型常量
  */
 public interface RPanConstants {
 

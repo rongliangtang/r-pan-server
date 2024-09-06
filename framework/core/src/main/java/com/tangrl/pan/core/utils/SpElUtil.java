@@ -19,6 +19,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 解析SpEl表达式解析器工具类
+ * Spring Expression Language (SpEL) 是一种功能强大的表达式语言，用于在 Spring 应用程序中查询和操作对象图。
+ * SpEL 允许开发者在 XML、注解和 Java 代码中使用类似于 EL (Expression Language) 的语法来动态访问和操作对象。
  */
 public class SpElUtil {
 
@@ -107,6 +109,7 @@ public class SpElUtil {
 
     /**
      * 表达式根对象
+     * 内部静态类，用于创建 SpEL 表达式的根对象。它包含了方法执行的相关信息。
      * 该对象主要支持以下表达式格式：
      * #root.className
      * #root.methodName
@@ -159,6 +162,7 @@ public class SpElUtil {
 
     /**
      * 表达式执行器对象
+     * 内部静态类，继承了 CachedExpressionEvaluator，用于缓存和解析 SpEL 表达式。
      */
     @Data
     private static class RPanExpressionEvaluator extends CachedExpressionEvaluator {

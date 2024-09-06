@@ -49,7 +49,7 @@ public class FileUtils {
     }
 
     /**
-     * 通过文件大小转化文件大小的展示名称
+     * 通过文件大小转化文件大小的展示名称，字符串格式
      *
      * @param totalSize
      * @return
@@ -77,14 +77,14 @@ public class FileUtils {
 
     /**
      * 生成文件的存储路径
-     * <p>
-     * 生成规则：基础路径 + 年 + 月 + 日 + 随机的文件名称
+     * 生成规则：基础路径 + 年 + 月 + 日 + uuid
      *
      * @param basePath
      * @param filename
      * @return
      */
     public static String generateStoreFileRealPath(String basePath, String filename) {
+        // StringBuffer 是线程安全的，基于 synchronized 关键字
         return new StringBuffer(basePath)
                 .append(File.separator)
                 .append(DateUtil.thisYear())
@@ -218,7 +218,7 @@ public class FileUtils {
 
     /**
      * 普通的流对流数据传输
-     *
+     * 将一个输入流的数据通过缓冲区写入到输出流中
      * @param inputStream
      * @param outputStream
      */
@@ -240,7 +240,7 @@ public class FileUtils {
      * @return
      */
     public static String getContentType(String filePath) {
-        //利用nio提供的类判断文件ContentType
+        // 利用nio提供的类判断文件ContentType
         File file = new File(filePath);
         String contentType = null;
         try {

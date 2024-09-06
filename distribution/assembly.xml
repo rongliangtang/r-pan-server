@@ -1,11 +1,15 @@
 <assembly>
+    <!--id 定义了组装的标识符，这里使用的是 ${project.version}，即当前项目的版本号。-->
     <id>${project.version}</id>
+    <!--includeBaseDirectory 决定是否在组装包中包含基础目录。设置为 true 表示包含。-->
     <includeBaseDirectory>true</includeBaseDirectory>
+    <!--定义输出的格式，这里指定了三种格式：dir、tar.gz、zip-->
     <formats>
         <format>dir</format>
         <format>tar.gz</format>
         <format>zip</format>
     </formats>
+    <!--定义了一组文件集合 (fileSet)和权限（fileMode），用于指定要包含在组装包中的文件。-->
     <fileSets>
         <fileSet>
             <includes>
@@ -19,6 +23,7 @@
             <fileMode>0755</fileMode>
         </fileSet>
     </fileSets>
+    <!--定义了具体的文件添加到组装包中的规则。-->
     <files>
         <file>
             <!--打好的jar包名称和放置目录-->
@@ -26,6 +31,7 @@
             <outputDirectory>target/</outputDirectory>
         </file>
     </files>
+    <!--定义了模块集合 (moduleSet)，用于指定要包含在组装包中的模块。-->
     <moduleSets>
         <moduleSet>
             <useAllReactorProjects>true</useAllReactorProjects>

@@ -99,8 +99,10 @@
     </dependencies>
 
     <build>
+    <!--指定生成的jar名称-->
         <finalName>r-pan-server</finalName>
         <plugins>
+            <!--用于编译 Java 源代码 的插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -108,6 +110,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <!--指定注解处理器的路径-->
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.mapstruct</groupId>
@@ -133,6 +136,7 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
+            <!--用于创建 JAR 文件 的插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -145,6 +149,7 @@
                     </archive>
                 </configuration>
             </plugin>
+            <!--用于打包 Spring Boot 应用程序 的插件-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

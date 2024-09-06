@@ -72,7 +72,7 @@ public class UserController {
 
     @ApiOperation(
             value = "用户忘记密码-校验用户名",
-            notes = "该接口提供了用户忘记密码-校验用户名的功能",
+            notes = "该接口提供了用户忘记密码-校验用户名的功能，返回密保问题",
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE
     )

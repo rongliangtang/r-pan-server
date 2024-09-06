@@ -28,15 +28,18 @@
     <build>
         <finalName>r-pan-server</finalName>
         <plugins>
+            <!--打包插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <!--配置该插件的行为-->
                 <configuration>
                     <descriptors>
                         <descriptor>assembly.xml</descriptor>
                     </descriptors>
                     <tarLongFileMode>posix</tarLongFileMode>
                 </configuration>
+                <!--定义插件在构建生命周期中的执行过程-->
                 <executions>
                     <execution>
                         <id>make-assembly</id>

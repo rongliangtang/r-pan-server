@@ -16,6 +16,7 @@ import java.util.Map;
 @NoArgsConstructor
 @Getter
 @Setter
+// setter 方法返回当前对象，支持链式调用
 @Accessors(chain = true)
 @Slf4j
 public class HttpLogEntity {

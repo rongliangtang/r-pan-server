@@ -5,6 +5,7 @@ import lombok.Data;
 
 /**
  * 自定义全局业务异常类
+ * 业务逻辑中抛出和捕获特定的业务异常
  */
 @Data
 public class RPanBusinessException extends RuntimeException {

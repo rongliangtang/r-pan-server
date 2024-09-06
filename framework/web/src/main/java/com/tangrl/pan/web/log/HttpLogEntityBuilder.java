@@ -16,6 +16,8 @@ import java.util.Objects;
 
 /**
  * HttpLogEntity构造器
+ * HttpLogEntity 对象包含了 HTTP 请求和响应的详细日志信息。
+ * 该类使用了 ContentCachingRequestWrapper 和 ContentCachingResponseWrapper 来捕获请求和响应的内容，并使用 StopWatch 记录请求的耗时。
  */
 public class HttpLogEntityBuilder {
 
@@ -83,7 +85,7 @@ public class HttpLogEntityBuilder {
     }
 
     /**
-     * 获取请求头MAP
+     * 获取请求头 MAP
      *
      * @param request
      * @return
@@ -104,7 +106,7 @@ public class HttpLogEntityBuilder {
     }
 
     /**
-     * 获取响应头MAP
+     * 获取响应头 MAP
      *
      * @param response
      * @return

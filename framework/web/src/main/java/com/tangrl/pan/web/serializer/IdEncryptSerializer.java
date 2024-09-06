@@ -10,8 +10,9 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * Id自动加密的JSON序列化器
- * 用于返回实体Long类型ID字段的自动序列化
+ * Id 自动加密的 JSON 序列化器
+ * 用于返回实体 Long 类型 ID 字段的自动序列化
+ * 控制 Long 类型的 ID 字段在序列化为 JSON 时的加密处理，保护 ID 敏感信息的安全
  */
 public class IdEncryptSerializer extends JsonSerializer<Long> {
     /**
@@ -26,8 +27,10 @@ public class IdEncryptSerializer extends JsonSerializer<Long> {
     @Override
     public void serialize(Long value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
         if (Objects.isNull(value)) {
+            // 如果 value 为 null，则使用 StringUtils.EMPTY 写一个空字符串。
             gen.writeString(StringUtils.EMPTY);
         } else {
+            // 如果 value 不为 null，则使用 IdUtil.encrypt(value) 将 Long 值加密，并写入 JSON。
             gen.writeString(IdUtil.encrypt(value));
         }
     }

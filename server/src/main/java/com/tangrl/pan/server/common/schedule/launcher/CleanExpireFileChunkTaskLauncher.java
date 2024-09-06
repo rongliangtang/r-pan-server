@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CleanExpireFileChunkTaskLauncher implements CommandLineRunner {
 
+    // cron语法：秒 分 小时 日 月 星期几
     private final static String CRON = "1 0 0 * * ? ";
 //    private final static String CRON = "0/5 * * * * ? ";
 

@@ -4,6 +4,7 @@ import java.util.UUID;
 
 /**
  * UUID工具类
+ * 生成不含连字符（"-"）的 UUID 大写字符串
  */
 public class UUIDUtil {
 

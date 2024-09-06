@@ -883,6 +883,7 @@ public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUse
      * 文件删除的后置操作
      * <p>
      * 1、对外发布文件删除的事件
+     * 文件被删除之后，刷新所有受影响的分享的状态
      *
      * @param context
      */
@@ -920,11 +921,14 @@ public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUse
     private void checkFileDeleteCondition(DeleteFileContext context) {
         List<Long> fileIdList = context.getFileIdList();
 
+        // 根据文件ID列表查询文件记录
+        // 如果查询到的文件记录数量与文件ID列表数量不一致，则抛出异常，表示存在不合法的文件记录。
         List<RPanUserFile> rPanUserFiles = listByIds(fileIdList);
         if (rPanUserFiles.size() != fileIdList.size()) {
             throw new RPanBusinessException("存在不合法的文件记录");
         }
 
+        // 检查文件ID集合是否有重复id
         Set<Long> fileIdSet = rPanUserFiles.stream().map(RPanUserFile::getFileId).collect(Collectors.toSet());
         int oldSize = fileIdSet.size();
         fileIdSet.addAll(fileIdList);
@@ -934,11 +938,13 @@ public class UserFileServiceImpl extends ServiceImpl<RPanUserFileMapper, RPanUse
             throw new RPanBusinessException("存在不合法的文件记录");
         }
 
+        // 检查文件id所属用户是否唯一
         Set<Long> userIdSet = rPanUserFiles.stream().map(RPanUserFile::getUserId).collect(Collectors.toSet());
         if (userIdSet.size() != 1) {
             throw new RPanBusinessException("存在不合法的文件记录");
         }
 
+        // 检查文件是否属于该用户
         Long dbUserId = userIdSet.stream().findFirst().get();
         if (!Objects.equals(dbUserId, context.getUserId())) {
             throw new RPanBusinessException("当前登录用户没有删除该文件的权限");

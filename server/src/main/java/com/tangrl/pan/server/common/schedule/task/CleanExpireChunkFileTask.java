@@ -84,13 +84,15 @@ public class CleanExpireChunkFileTask implements ScheduleTask {
 
     /**
      * 滚动查询过期的文件分片记录
-     *
+     * le 小于等于，ge 大于等于，limit 限制返回的记录数量
      * @param scrollPointer
      * @return
      */
     private List<RPanFileChunk> scrollQueryExpireFileChunkRecords(Long scrollPointer) {
         QueryWrapper queryWrapper = Wrappers.query();
+        // 在现在已经过期
         queryWrapper.le("expiration_time", new Date());
+        // 大于等于当前id的记录
         queryWrapper.ge("id", scrollPointer);
         queryWrapper.last(" limit " + BATCH_SIZE);
         return iFileChunkService.list(queryWrapper);

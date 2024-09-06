@@ -18,6 +18,7 @@ public class UserInfoVO implements Serializable {
     private String username;
 
     @ApiModelProperty("用户根目录的加密ID")
+    // 放回的结果id应该是加密的
     @JsonSerialize(using = IdEncryptSerializer.class)
     private Long rootFileId;
 

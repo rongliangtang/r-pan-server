@@ -34,7 +34,8 @@ public class UserRegisterContext implements Serializable {
     private String answer;
 
     /**
-     * 用户实体对象
+     * 用户实体对象，用于存储数据库，包括 salt、加密后的password 等
+     * 创建这个对象属性的原因是，包括不同的字段、且值需要加密
      */
     private RPanUser entity;
 

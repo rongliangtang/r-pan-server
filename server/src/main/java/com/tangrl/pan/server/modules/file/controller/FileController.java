@@ -42,7 +42,7 @@ public class FileController {
 
     @ApiOperation(
             value = "查询文件列表",
-            notes = "该接口提供了用户插叙某文件夹下面某些文件类型的文件列表的功能",
+            notes = "该接口提供了用户插询某文件夹下面某些文件类型的文件列表的功能",
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE
     )

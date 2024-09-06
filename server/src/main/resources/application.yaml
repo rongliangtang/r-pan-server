@@ -118,7 +118,6 @@ com:
       #                        auto-create-bucket: true
       server:
         share-prefix: https://pan.tangrl.cn/share/
-#        share-prefix: http://47.120.77.35/share/
       bloom:
         filter:
           local:

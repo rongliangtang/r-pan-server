@@ -20,7 +20,9 @@ public class CaffeineCacheConfig {
 
     @Bean
     public CacheManager caffeineCacheManager() {
+        // 初始化了 CacheConstants.R_PAN_CACHE_NAME 这个缓存名
         CaffeineCacheManager cacheManager = new CaffeineCacheManager(CacheConstants.R_PAN_CACHE_NAME);
+        // 使用配置实体类中的值，来配置缓存管理器
         cacheManager.setAllowNullValues(properties.getAllowNullValue());
         Caffeine<Object, Object> caffeineBuilder = Caffeine.newBuilder()
                 .initialCapacity(properties.getInitCacheCapacity())

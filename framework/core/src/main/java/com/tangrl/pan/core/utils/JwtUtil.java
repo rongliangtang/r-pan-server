@@ -8,7 +8,9 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Date;
 
 /**
- * Jwt工具类
+ * Jwt 工具类
+ * 提供了生成和解析 JSON Web Token (JWT) 的功能。
+ * JWT 是一种用于在各方之间安全地传输信息的紧凑、自包含的方式。
  */
 public class JwtUtil {
 
@@ -26,7 +28,7 @@ public class JwtUtil {
 
     /**
      * 生成token
-     *
+     * 生成一个 JWT，包含主体信息、声明（claims）和过期时间。
      * @param subject
      * @param claimKey
      * @param claimValue
@@ -46,7 +48,7 @@ public class JwtUtil {
 
     /**
      * 解析token
-     *
+     * 解析 JWT 并返回指定的声明值
      * @param token
      * @return
      */
@@ -61,6 +63,8 @@ public class JwtUtil {
                     .getBody();
             return claims.get(claimKey);
         } catch (Exception e) {
+            // 如果 token 无效或过期，解析过程会抛出异常
+            // 捕获异常并返回 null
             return null;
         }
     }

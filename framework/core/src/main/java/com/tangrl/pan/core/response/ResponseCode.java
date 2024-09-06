@@ -5,6 +5,7 @@ import lombok.Getter;
 
 /**
  * 项目公用返回状态码
+ * 定义了常用的响应状态码及其对应的描述
  */
 @AllArgsConstructor
 @Getter

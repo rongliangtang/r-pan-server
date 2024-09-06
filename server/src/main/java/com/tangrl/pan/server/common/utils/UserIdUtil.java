@@ -6,6 +6,7 @@ import java.util.Objects;
 
 /**
  * 用户ID存储工具类
+ * 将 userid 存放在 threadlocal 中，方便后续执行取出
  */
 public class UserIdUtil {
 

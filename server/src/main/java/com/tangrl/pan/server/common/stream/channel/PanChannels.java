@@ -7,6 +7,8 @@ import org.springframework.messaging.SubscribableChannel;
 
 /**
  * 事件通道定义类
+ * Spring Cloud Stream会自动创建这些消息通道的bean，并将它们注册到Spring上下文中。
+ * 由于AbstractStreamProducer中使用了@Autowired注解和Map<String, MessageChannel> channelMap，Spring会自动注入这些通道到channelMap中。
  */
 public interface PanChannels {
 

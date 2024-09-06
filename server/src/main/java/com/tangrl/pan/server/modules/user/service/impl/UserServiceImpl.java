@@ -70,7 +70,7 @@ public class UserServiceImpl extends ServiceImpl<RPanUserMapper, RPanUser> imple
      * @return
      */
     @Override
-    public Long register(UserRegisterContext userRegisterContext) {
+    public Long  register(UserRegisterContext userRegisterContext) {
         assembleUserEntity(userRegisterContext);
         doRegister(userRegisterContext);
         createUserRootFolder(userRegisterContext);
@@ -98,7 +98,7 @@ public class UserServiceImpl extends ServiceImpl<RPanUserMapper, RPanUser> imple
     /**
      * 用户退出登录
      * <p>
-     * 1、清除用户的登录凭证缓存
+     * 1、清除用户的登录凭证缓存（从 redis 中清除）
      *
      * @param userId
      */
@@ -435,7 +435,8 @@ public class UserServiceImpl extends ServiceImpl<RPanUserMapper, RPanUser> imple
 
     /**
      * 生成并保存登陆之后的凭证
-     *
+     * accessToken 会保存到 cache 中，key 为 UserId，value 为 accessToken
+     * accessToken 会保存到
      * @param userLoginContext
      */
     private void generateAndSaveAccessToken(UserLoginContext userLoginContext) {

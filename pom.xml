@@ -2,32 +2,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!--项目的子模块-->
     <modules>
         <module>framework</module>
         <module>server</module>
         <module>distribution</module>
     </modules>
-
+    <!--继承 Spring-Boot 父项目，继承默认配置，使用父项目依赖版本-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <!--项目信息-->
     <groupId>com.tangrl.pan</groupId>
     <artifactId>r-pan-parent</artifactId>
     <version>1.0</version>
     <name>r-pan-parent</name>
     <description>R Pan项目服务端</description>
+    <!--这个父 POM 文件的 <packaging> 类型为 pom，而不是 jar 或 war，这意味着它不会生成 JAR 包。它的主要作用是聚合和管理子模块。-->
     <packaging>pom</packaging>
-
+    <!--属性-->
     <properties>
+        <!--maven 构建过程中使用的属性-->
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <!--引用的属性，例如${xxx}-->
         <druid.version>1.1.10</druid.version>
         <mysql-connector.version>8.0.11</mysql-connector.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
@@ -52,7 +57,7 @@
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
     </properties>
-
+    <!--依赖管理，声明和管理所有子项目可能使用的依赖，子模块使用时无需声明版本号-->
     <dependencyManagement>
         <dependencies>
             <!--reflections-->
@@ -205,6 +210,8 @@
         </dependencies>
     </dependencyManagement>
 
+    <!--构建配置-->
+    <!--父 POM 文件中的 <build> 元素可以统一配置插件，这些插件配置会被子模块继承和使用。-->
     <build>
         <plugins>
             <!--编译插件-->
@@ -228,11 +235,13 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>2.7</version>
             </plugin>
+            <!--打包插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.6</version>
             </plugin>
+            <!--jar打包插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -240,7 +249,7 @@
             </plugin>
         </plugins>
     </build>
-
+    <!--仓库，定义了 Maven 查找依赖的远程仓库地址-->
     <repositories>
         <repository>
             <id>spring-milestones</id>

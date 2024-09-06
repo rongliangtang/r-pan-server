@@ -9,6 +9,7 @@ import java.security.MessageDigest;
 
 /**
  * MessageDigest加密工具类
+ *
  */
 public class MessageDigestUtil {
 
@@ -18,7 +19,7 @@ public class MessageDigestUtil {
     public static final String ZERO_STR = "0";
 
     /**
-     * 采用指定的单向散列模式加密
+     * 计算 字节数组 的 消息摘要，返回 字节数组
      *
      * @param originBytes
      * @param mode
@@ -35,7 +36,7 @@ public class MessageDigestUtil {
     }
 
     /**
-     * 单向散列指定模式的字符串
+     * 计算 字符串 的 消息摘要，返回 字节数组
      *
      * @param originContent
      * @param mode
@@ -50,7 +51,7 @@ public class MessageDigestUtil {
     }
 
     /**
-     * 采用指定模式散列字符串
+     * 计算 字符串 的 消息摘要，返回 字符串
      *
      * @param originContent
      * @param mode
@@ -71,7 +72,7 @@ public class MessageDigestUtil {
     }
 
     /**
-     * 获取md5加密串
+     * 获取 md5 消息摘要
      *
      * @param originContent
      * @return
@@ -81,7 +82,7 @@ public class MessageDigestUtil {
     }
 
     /**
-     * 获取sha1加密串
+     * 获取 sha1 消息摘要
      *
      * @param originContent
      * @return
@@ -91,7 +92,7 @@ public class MessageDigestUtil {
     }
 
     /**
-     * 获取sha256加密串
+     * 获取 sha256 消息摘要
      *
      * @param originContent
      * @return

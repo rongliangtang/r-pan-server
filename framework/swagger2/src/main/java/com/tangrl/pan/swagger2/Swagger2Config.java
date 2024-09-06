@@ -17,15 +17,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * 接口文档配置类
  */
+// 标识这是一个 Spring Boot 配置类
 @SpringBootConfiguration
+// 启用 Swagger 2 的自动配置，允许生成 API 文档。
 @EnableSwagger2
+// 启用 Swagger Bootstrap UI 的自动配置，为 Swagger UI 提供更好的用户体验。
 @EnableSwaggerBootstrapUI
 @Slf4j
 public class Swagger2Config {
 
+    // 注入 Swagger2ConfigProperties 配置属性
     @Autowired
     private Swagger2ConfigProperties properties;
 
+    // Docket 是 Swagger 的主要构建器类，用于配置和初始化 Swagger 的各种选项。
     @Bean
     public Docket panServerApi() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
@@ -41,6 +46,7 @@ public class Swagger2Config {
         return docket;
     }
 
+    // ApiInfoBuilder 用于构建 API 文档的基本信息。
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title(properties.getTitle())

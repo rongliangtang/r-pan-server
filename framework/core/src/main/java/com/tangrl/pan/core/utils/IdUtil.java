@@ -18,7 +18,8 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
- * 雪花算法id生成器
+ * 雪花算法 id 生成器
+ * 雪花算法由Twitter开发，是一种高效、可扩展的分布式唯一ID生成算法。
  */
 public class IdUtil {
 
@@ -186,8 +187,8 @@ public class IdUtil {
 
     /**
      * 加密ID
-     *
-     * @return
+     * @param id long 型
+     * @return String 型 的加密 id 字符串
      */
     public static String encrypt(Long id) {
         if (Objects.nonNull(id)) {
@@ -203,8 +204,8 @@ public class IdUtil {
     /**
      * 解密ID
      *
-     * @param decryptId
-     * @return
+     * @param decryptId 加密 id 字符串
+     * @return long 型的 id
      */
     public static Long decrypt(String decryptId) {
         if (StringUtils.isNotBlank(decryptId)) {
@@ -220,8 +221,7 @@ public class IdUtil {
     }
 
     /**
-     * 解密多个加密ID拼接的字符串
-     *
+     * 解密多个加密ID字符串拼接的字符串，拼接间隔是公用的字符串分隔符
      * @param decryptIdStr
      * @return
      */
